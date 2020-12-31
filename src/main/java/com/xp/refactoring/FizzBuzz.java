@@ -5,7 +5,7 @@ public class FizzBuzz {
     public String countTo(int c) {
         if(c<=0) return "";
 
-        LCD lcd = new LCD();
+        Output lcd = createOutput();
         for(int i=1; i<=c; i++) {
             if (i%3==0) {
                 lcd.appendFizz();
@@ -29,6 +29,16 @@ public class FizzBuzz {
             }
         }
         return lcd.output();
+    }
+
+    private Output createOutput() {
+        Output lcd = new LCD();
+        return lcd;
+    }
+
+    private Output createFancyOutput() {
+        Output output = new FancyOutput(3, false, 0, false, false, " ");
+        return output;
     }
 
 }
